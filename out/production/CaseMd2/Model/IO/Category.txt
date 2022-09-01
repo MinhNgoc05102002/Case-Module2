@@ -1,3 +1,5 @@
-01,k, Các sản phẩm được mua với số lượng nhiều nhất
-02,Cay sen da, Cay sen da loai nho
-04, Cay canh loai nho,Cay canh chieu cao duoi 1m
+01,Cây cảnh phong thuỷ,Các loại cây phong thủy theo tuổi - theo mệnh
+02,Cây cảnh trong nhà,Cây cảnh ưa bóng mát. Phát triển tốt ở điều kiện ít nắng và có điều hòa và chỉ có ánh điện huỳnh quang
+03,Cây cảnh để bàn,Cây cảnh loại nhỏ để bàn làm việc
+04,Cây cảnh văn phòng,Cây cảnh loại lớn
+05,Cây sen đá,Sen đá cỡ vừa

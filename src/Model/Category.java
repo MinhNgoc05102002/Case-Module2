@@ -1,7 +1,6 @@
 package Model;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class Category {
     private String id;
@@ -26,7 +25,8 @@ public class Category {
 
     // 1. Them sp vao Category
     public void add(Product p) {
-        productList.add(p);
+        if(!productList.containsProduct(p.getId()))
+            productList.add(p);
     }
 
     // 2. Hien thi sp theo category
@@ -35,15 +35,15 @@ public class Category {
     }
 
     // 3. Xoa sp khoi category (van con trong he thong)
-    public void del(String id) {
-        int check = 0;
+    public void delProduct(String id) {
+        if(!productList.containsProduct(id)) return;
+
         for(int i=0; i<productList.getListProduct().size(); i++) {
             if(productList.getListProduct().get(i).getId().equals(id)) {
                 productList.getListProduct().remove(i);
-                check = 1;
             }
         }
-        if(check == 1) System.out.println("Success delete!!!");
+        System.out.println("Success delete!!!");
     }
 
     @Override
@@ -84,8 +84,6 @@ public class Category {
     public ArrayList<Product> getProductList() {
         return productList.getListProduct();
     }
-
-
     public void setId(String id) {
         this.id = id;
     }

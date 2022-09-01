@@ -9,14 +9,13 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class ReadAndWriteFile {
-
     public static final String PATH_ACCOUNT_USER = "src//Model//IO//AccountUser.txt";
     public static final String PATH_ACCOUNT_ADMIN = "src//Model//IO//AccountAdmin.txt";
     public static final String PATH_PRODUCT = "src//Model//IO//Product.txt";
     public static final String PATH_CATEGORY = "src//Model//IO//Category.txt";
     public static void writeToFileAccount(ArrayList<Account> listAcc, String filePath) {
         try {
-            FileWriter fw = new FileWriter(filePath); // no append
+            FileWriter fw = new FileWriter(filePath);
             BufferedWriter bw = new BufferedWriter(fw);
             for (Account a : listAcc) {
                 bw.write(a.toString());
@@ -30,10 +29,9 @@ public class ReadAndWriteFile {
         }
     }
 
-
     public static void writeToFileProduct(ArrayList<Product> listProduct) {
         try {
-            FileWriter fw = new FileWriter(PATH_PRODUCT); // no append
+            FileWriter fw = new FileWriter(PATH_PRODUCT);
             BufferedWriter bw = new BufferedWriter(fw);
             for (Product p : listProduct) {
                 bw.write(p.toString());
@@ -49,7 +47,7 @@ public class ReadAndWriteFile {
 
     public static void writeToFileCategory(ArrayList<Category> listCate) {
         try {
-            FileWriter fw = new FileWriter(PATH_CATEGORY); // no append
+            FileWriter fw = new FileWriter(PATH_CATEGORY);
             BufferedWriter bw = new BufferedWriter(fw);
             for (Category c : listCate) {
                 bw.write(c.toString());
@@ -89,7 +87,6 @@ public class ReadAndWriteFile {
 
                 list.add(newAccount);
             }
-
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -119,7 +116,6 @@ public class ReadAndWriteFile {
                 }
                 list.add(new Product(id, name, description, Integer.parseInt(amount), Double.parseDouble(price), categoryId));
             }
-
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -142,7 +138,6 @@ public class ReadAndWriteFile {
                 String description = txt[2];
                 list.add(new Category(id, name, description));
             }
-
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

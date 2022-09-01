@@ -11,30 +11,27 @@ public class AccountManager {
         listAccount = new ArrayList<Account>();
     }
 
+    public boolean containsAccount(String username) {
+        for(Account acc:listAccount){
+            if(acc.getUserName().equals(username))
+                return true;
+        }
+        return false;
+    }
+
     // 1. Them tai khoan (dang ki)
     public void register() {
         Scanner sc = new Scanner(System.in);
-        int check;
         String userName;
         do{
-            check = 0;
-
             do{
                 System.out.println("Nhập username: ");
                 userName = sc.nextLine();
                 if(!Account.validateUserName(userName))
                     System.out.println("Username không hợp lệ. Username không được phép chứa kí tự đặc biệt và phải có độ dài ít nhất 8 kí tự.");
             } while(!Account.validateUserName(userName));
-
-            for (Account a:listAccount) {
-                if(a.getUserName().equals(userName)) {
-                    check = 1;
-                    System.out.println("Tên người dùng đã tồn tại, mời nhập lại !!!");
-                    break;
-                }
-            }
-
-        } while(check == 1);
+            if(containsAccount(userName)) System.out.println("Tên người dùng đã tồn tại, mời nhập lại !!!");
+        } while(containsAccount(userName));
         String passWord;
         do {
             System.out.println("Nhập mật khẩu: ");
@@ -53,20 +50,21 @@ public class AccountManager {
 
         System.out.println("Nhập địa chỉ");
         String address = sc.nextLine();
-
         listAccount.add( new Account(userName, passWord, phoneNumber, address));
     }
 
     // 2. Xoa tai khoan
     public void delAcc(String userName) {
-        int check = 0;
+        if(!containsAccount(userName)){
+            System.out.println("Tài khoản ko tồn tại!!!");
+            return;
+        }
+
         for(int i=0; i<listAccount.size(); i++) {
             if(listAccount.get(i).getUserName().equals(userName)) {
-                check = 1;
                 listAccount.remove(i);
             }
         }
-        if(check == 0) System.out.println("Tài khoản ko tồn tại!!!");
     }
 
     // 3. Dang nhap
@@ -86,10 +84,8 @@ public class AccountManager {
                     thisUser.setAddress(a.getAddress());
                     thisUser.setPhoneNumber(a.getPhoneNumber());
                     thisUser.setCart(a.getCart());
-
                     return true;
                 }
-
                 else {
                     System.out.println("Sai mật khẩu !!!");
                     return false;

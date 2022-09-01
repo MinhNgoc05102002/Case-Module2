@@ -23,19 +23,19 @@ public class ProductManager {
     }
     public void addNewProduct() {
         Scanner sc = new Scanner(System.in);
-        int check;
+        boolean check;
         String id;
         do {
             System.out.println("Nhập id sản phẩm: ");
             id = sc.nextLine();
-            check = 0;
+            check = false;
             for (Product p : listProduct) {
                 if (p.getId().equals(id)) {
-                    check = 1;
+                    check = true;
                     System.out.println("id sản phẩm đã tồn tại, mời bạn nhập lại !!!");
                 }
             }
-        } while (check == 1);
+        } while (check);
         System.out.println("Nhập tên sản phẩm: ");
         String name = sc.nextLine();
         System.out.println("Nhập mô tả sản phẩm: ");
@@ -50,25 +50,25 @@ public class ProductManager {
 
     // 2. Hien thi sp => Hien thi theo danh muc sp: da co
     public void display() {
-        System.out.println("------------- DANH SÁCH SẢN PHẨM ----------");
+//        System.out.println("------------- DANH SÁCH SẢN PHẨM ----------");
         for(Product p:listProduct) {
-            System.out.println(p);
+            System.out.println(p.getId() + ", " + p.getName() + " (( " + p.getDescription() + ")) | Số lượng: " + p.getAmount() + " | Giá tiền: " + p.getPrice());
         }
     }
 
     // 3. Tim kiem va hien thi thong tin 1 sp:
     public Product findById() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Nhap id san pham: ");
+        System.out.println("Nhập id sản phẩm: ");
         String id = sc.nextLine();
-        System.out.println("==> DANH SÁCH SẢN PHẨM TÌM ĐƯỢC: ");
+        System.out.println("DANH SÁCH SẢN PHẨM TÌM ĐƯỢC: ");
         for(Product p:listProduct) {
             if(p.getId().equals(id)) {
                 System.out.println(p);
                 return p;
             }
         }
-        System.out.println("Không tìm thấy sản phẩm có mã " + id);
+        System.out.println("\tTrống (không tìm thấy sản phẩm có mã " + id + ")");
         return null;
     }
 
@@ -77,30 +77,16 @@ public class ProductManager {
         System.out.println("Nhập tên sản phẩm cần tìm: ");
         String name = sc.nextLine();
         name.toLowerCase();
-        int check = 0;
+        boolean check = false;
         System.out.println("==> DANH SÁCH SẢN PHẨM TÌM ĐƯỢC: ");
         for(Product p:listProduct) {
             if(p.getName().toLowerCase().contains(name)) {
                 System.out.println(p);
-                check = 1;
+                check = true;
             }
         }
-        if(check == 0) System.out.println("Không tìm thấy sản phẩm có tên " + name);
+        if(check == false) System.out.println("Không tìm thấy sản phẩm có tên " + name);
     }
-
-    // 4. Xoa sp
-//    public void delProduct() {
-//        Scanner sc = new Scanner(System.in);
-//        String id = sc.next();
-//        int check = 0;
-//        for(int i=0; i<listProduct.size(); i++) {
-//            if(listProduct.get(i).getId().equals(id)) {
-//                listProduct.remove(i);
-//                check = 1;
-//            }
-//        }
-//        if(check == 0) System.out.println("Khong tim thay san pham co ma " + id);
-//    }
 
     public void delProduct(String id) {
         for(int i=0; i<listProduct.size(); i++) {
@@ -119,7 +105,7 @@ public class ProductManager {
         System.out.print("Đến giá: ");
         upperLimit = Double.parseDouble(sc.nextLine());
 
-        System.out.println("==> Danh sách sản phẩm có giá từ " + lowerLimit + " đến " + upperLimit + ": ");
+        System.out.println("DANH SÁCH SẢN PHẨM CÓ GIÁ TỪ " + lowerLimit + " ĐẾN " + upperLimit + ": ");
         for(Product p:listProduct) {
             if(p.getPrice() <= upperLimit && p.getPrice() >= lowerLimit) {
                 System.out.println(p);
