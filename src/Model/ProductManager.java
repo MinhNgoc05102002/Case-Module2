@@ -52,7 +52,7 @@ public class ProductManager {
     public void display() {
 //        System.out.println("------------- DANH SÁCH SẢN PHẨM ----------");
         for(Product p:listProduct) {
-            System.out.println(p.getId() + ", " + p.getName() + " (( " + p.getDescription() + ")) | Số lượng: " + p.getAmount() + " | Giá tiền: " + p.getPrice());
+            p.display();
         }
     }
 
@@ -81,7 +81,7 @@ public class ProductManager {
         System.out.println("==> DANH SÁCH SẢN PHẨM TÌM ĐƯỢC: ");
         for(Product p:listProduct) {
             if(p.getName().toLowerCase().contains(name)) {
-                System.out.println(p);
+                p.display();
                 check = true;
             }
         }
@@ -108,7 +108,7 @@ public class ProductManager {
         System.out.println("DANH SÁCH SẢN PHẨM CÓ GIÁ TỪ " + lowerLimit + " ĐẾN " + upperLimit + ": ");
         for(Product p:listProduct) {
             if(p.getPrice() <= upperLimit && p.getPrice() >= lowerLimit) {
-                System.out.println(p);
+                p.display();
             }
         }
     }

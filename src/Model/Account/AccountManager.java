@@ -28,7 +28,7 @@ public class AccountManager {
                 System.out.println("Nhập username: ");
                 userName = sc.nextLine();
                 if(!Account.validateUserName(userName))
-                    System.out.println("Username không hợp lệ. Username không được phép chứa kí tự đặc biệt và phải có độ dài ít nhất 8 kí tự.");
+                    System.out.println("Username không hợp lệ. Username không được phép chứa kí tự đặc biệt, không chứa chữ in hoa và phải có độ dài ít nhất 8 kí tự.");
             } while(!Account.validateUserName(userName));
             if(containsAccount(userName)) System.out.println("Tên người dùng đã tồn tại, mời nhập lại !!!");
         } while(containsAccount(userName));
@@ -37,8 +37,8 @@ public class AccountManager {
             System.out.println("Nhập mật khẩu: ");
             passWord = sc.nextLine();
             if(!Account.validatePassword(passWord))
-                System.out.println("Password không hợp lệ. Password không được phép chứa kí tự đặc biệt và phải có độ dài ít nhất 8 kí tự.");
-        } while(!Account.validatePassword(userName));
+                System.out.println("Password không hợp lệ. Password không được phép chứa kí tự đặc biệt, phải chứa chữ và số và phải có độ dài ít nhất 8 kí tự.");
+        } while(!Account.validatePassword(passWord));
 
         String phoneNumber;
         do {

@@ -38,6 +38,10 @@ public class Product {
         this.categoryId = categoryId;
     }
 
+    public void display() {
+         System.out.println(id + ", " + name + " (( " + description + ")) | Số lượng: " + amount + " | Giá tiền: " + price);
+    }
+
     @Override
     public String toString() {
         String productString = "";

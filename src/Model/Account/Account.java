@@ -3,13 +3,12 @@ package Model.Account;
 import Model.Product;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Account {
     public static final String USERNAME_REGEX = "^[_a-z0-9]{8,}$"; // chữ thường hoặc số, ít nhất 8 kí tự
-    public static final String PASSWORD_REGEX = "^/a-zA-Z0-9/{8,}$"; // có chữ và số, ít nhất 8 kí tự
+    public static final String PASSWORD_REGEX = "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,})"; // có chữ và số, ít nhất 8 kí tự
     public static final String PHONE_REGEX = "^(0?)(3[2-9]|5[6|8|9]|7[0|6-9]|8[0-6|8|9]|9[0-4|6-9])[0-9]{7}$";
     private String userName;
     private String passWord;
