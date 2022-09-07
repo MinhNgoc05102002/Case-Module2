@@ -1,6 +1,7 @@
-package Model.Account;
+package controller;
 
-import java.io.InputStream;
+import model.account.Account;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 

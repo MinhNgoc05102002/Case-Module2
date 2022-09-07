@@ -1,18 +1,18 @@
-package Model.IO;
+package storage;
 
-import Model.Account.Account;
-import Model.Category;
-import Model.Product;
-import Model.ProductManager;
+import model.account.Account;
+import model.Category;
+import model.Product;
+import controller.ProductManager;
 
 import java.io.*;
 import java.util.ArrayList;
 
 public class ReadAndWriteFile {
-    public static final String PATH_ACCOUNT_USER = "src//Model//IO//AccountUser.txt";
-    public static final String PATH_ACCOUNT_ADMIN = "src//Model//IO//AccountAdmin.txt";
-    public static final String PATH_PRODUCT = "src//Model//IO//Product.txt";
-    public static final String PATH_CATEGORY = "src//Model//IO//Category.txt";
+    public static final String PATH_ACCOUNT_USER = "src//storage//AccountUser.txt";
+    public static final String PATH_ACCOUNT_ADMIN = "src//storage//AccountAdmin.txt";
+    public static final String PATH_PRODUCT = "src//storage//Product.txt";
+    public static final String PATH_CATEGORY = "src//storage//Category.txt";
     public static void writeToFileAccount(ArrayList<Account> listAcc, String filePath) {
         try {
             FileWriter fw = new FileWriter(filePath);

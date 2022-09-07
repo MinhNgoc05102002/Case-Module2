@@ -1,4 +1,6 @@
-package Model;
+package model;
+
+import controller.ProductManager;
 
 import java.util.ArrayList;
 
@@ -36,7 +38,10 @@ public class Category {
 
     // 3. Xoa sp khoi category (van con trong he thong)
     public void delProduct(String id) {
-        if(!productList.containsProduct(id)) return;
+        if(!productList.containsProduct(id)) {
+            System.out.println("Danh mục sản phẩm không chứa sản phẩm này");
+            return;
+        }
 
         for(int i=0; i<productList.getListProduct().size(); i++) {
             if(productList.getListProduct().get(i).getId().equals(id)) {

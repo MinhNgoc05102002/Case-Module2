@@ -1,10 +1,8 @@
-package Controller;
+package controller;
 
-import Model.Account.Account;
-import Model.Account.AccountManager;
-import Model.CategoryManager;
-import Model.IO.ReadAndWriteFile;
-import Model.Menu.Menu;
+import model.account.Account;
+import storage.ReadAndWriteFile;
+import model.menu.Menu;
 
 public class HandleAdmin {
     public AccountManager accountManager = new AccountManager();
@@ -66,11 +64,9 @@ public class HandleAdmin {
             choose = Menu.inputChoose();
             switch (choose) {
                 case CATEGORY_MANAGER:
-                    // Quan ly danh muc sp
                     categoryManagerMenu();
                     break;
                 case PRODUCT_MANAGER:
-                    // Quan ly sp
                     productManagerMenu();
                     break;
                 case EXIT:
@@ -89,27 +85,21 @@ public class HandleAdmin {
             choose = Menu.inputChoose();
             switch (choose) {
                 case DISPLAY_PRODUCT:
-                    // Hiển thị sp theo danh mục
                     categoryManager.displayProduct();
                     break;
                 case FIND_PRODUCT_BY_NAME:
-                    // Tìm kiếm sp theo tên
                     categoryManager.getListAllProduct().findByName();
                     break;
                 case ADD_PRODUCT:
-                    // Thêm sp
                     categoryManager.getListAllProduct().addNewProduct();
                     break;
                 case UPDATE_PRODUCT:
-                    // Sửa sp
                     updateProduct();
                     break;
                 case DELETE_PRODUCT:
-                    // Xóa sp
                     categoryManager.delProductForever();
                     break;
                 case FILTER_PRODUCT:
-                    // Lọc sp theo khoảng giá
                     categoryManager.getListAllProduct().filter();
                     break;
                 case EXIT:
@@ -129,19 +119,15 @@ public class HandleAdmin {
             choose = Menu.inputChoose();
             switch (choose) {
                 case 1:
-                    // Sửa tên sp
                     categoryManager.changeProductName();
                     break;
                 case 2:
-                    // Sửa mô tả sp
                     categoryManager.changeProductDes();
                     break;
                 case 3:
-                    // sửa số lượng sp
                     categoryManager.changeProductAmount();
                     break;
                 case 4:
-                    // sửa giá sp
                     categoryManager.changeProductPrice();
                     break;
                 case EXIT:
@@ -158,19 +144,15 @@ public class HandleAdmin {
             choose = Menu.inputChoose();
             switch (choose) {
                 case DISPLAY_CATEGORY:
-                    // Xem các danh mục sp hiện có
                     categoryManager.display();
                     break;
                 case ADD_CATEGORY:
-                    // Thêm danh mục sp
                     categoryManager.add();
                     break;
                 case DELETE_CATEGORY:
-                    // Xóa danh mục sp
                     categoryManager.del();
                     break;
                 case UPDATE_CATEGORY:
-                    // Sua danh muc sp
                     updateCategory();
                     break;
                 case EXIT:
@@ -190,19 +172,15 @@ public class HandleAdmin {
             choose = Menu.inputChoose();
             switch (choose) {
                 case 1:
-                    // Sửa tên danh mục sp
                     categoryManager.changeCategoryName();
                     break;
                 case 2:
-                    // Sửa mô tả danh mục sp
                     categoryManager.changeCategoryDes();
                     break;
                 case 3:
-                    // Xóa sp khỏi danh mục sp
                     categoryManager.delProductInCategory();
                     break;
                 case 4:
-                    // Thêm sp vào danh mục sp
                     categoryManager.addProductToCategory();
                     break;
                 case EXIT:

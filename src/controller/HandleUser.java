@@ -1,11 +1,9 @@
-package Controller;
+package controller;
 
-import Model.Account.Account;
-import Model.Account.AccountManager;
-import Model.CategoryManager;
-import Model.IO.ReadAndWriteFile;
-import Model.Menu.Menu;
-import Model.Product;
+import model.account.Account;
+import storage.ReadAndWriteFile;
+import model.menu.Menu;
+import model.Product;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -63,23 +61,18 @@ public class HandleUser {
             choose = Menu.inputChoose();
             switch (choose) {
                 case DISPLAY_PRODUCT_BY_CATEGORY:
-                    // Hien thi sp theo danh mục
                     categoryManager.displayProduct();
                     break;
                 case FIND_PRODUCT_BY_NAME:
-                    // tim kiem sp theo ten
                     categoryManager.getListAllProduct().findByName();
                     break;
                 case FILTER_PRODUCT:
-                    // hien thi sp theo khoang gia
                     categoryManager.getListAllProduct().filter();
                     break;
                 case ADD_TO_CART:
-                    // them sp vao gio hang
                     addToCart();
                     break;
                 case DISPLAY_CART:
-                    // xem gio hang
                     displayCart();
                     break;
                 case EXIT:

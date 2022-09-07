@@ -1,6 +1,6 @@
-package Model.Account;
+package model.account;
 
-import Model.Product;
+import model.Product;
 
 import java.util.ArrayList;
 import java.util.regex.Matcher;

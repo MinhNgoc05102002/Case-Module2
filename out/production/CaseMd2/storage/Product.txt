@@ -2,8 +2,8 @@
 02,Cây phát tài,Chịu được khô hạn ưa ánh sáng,200,390.0,01
 03,Cây lưỡi hổ mix,Có chiều cao cả chậu 1m. Có ý nghĩa xua đuổi tà ma và mang may mắn cho gia chủ,50,750.0,01,02
 04,Cây bàng cẩm thạch lá tím,Chiều cao khoảng 70cm. Là hình trái tim xanh viền lá và mặt lá phía sau có màu vàng kem,20,239.0,02,04,04
-05,Cây trúc Nhật,Mang ý nghĩa phong thủy và may mắn,30,349.0,01,02,04
-06,Cây hạnh phúc thủy sinh,Chiều cao cả bình khoảng 30cm,50,155.0,03,02
+05,Cây trúc Nhật,Mang ý nghĩa phong thủy và may mắn,29,349.0,01,02,04
+06,Cây hạnh phúc thủy sinh,Chiều cao cả bình khoảng 30cm,47,155.0,03,02
 07,Cây kim tiền thủy sinh,Phù hợp với người mệnh thủy-kim-mộc,50,155.0,03,01
 08,Cây sen đá hạt lựu,Kích thước 5-7cm,30,50.0,05,03
 09,Cây sen đá kim cương,Kích thước 5-7cm,30,50.0,05,03

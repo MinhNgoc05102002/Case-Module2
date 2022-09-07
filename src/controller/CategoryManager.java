@@ -1,4 +1,7 @@
-package Model;
+package controller;
+
+import model.Category;
+import model.Product;
 
 import java.util.ArrayList;
 import java.util.Scanner;

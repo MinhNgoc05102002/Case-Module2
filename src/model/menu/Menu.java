@@ -1,4 +1,4 @@
-package Model.Menu;
+package model.menu;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

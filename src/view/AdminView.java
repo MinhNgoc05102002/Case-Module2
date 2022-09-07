@@ -1,6 +1,6 @@
-package View;
+package view;
 
-import Controller.HandleAdmin;
+import controller.HandleAdmin;
 
 public class AdminView {
     public static void main(String[] args) {

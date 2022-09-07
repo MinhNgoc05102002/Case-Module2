@@ -1,6 +1,6 @@
-package View;
+package view;
 
-import Controller.HandleUser;
+import controller.HandleUser;
 
 public class UserView {
     public static void main(String[] args) {
