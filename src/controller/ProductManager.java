@@ -19,7 +19,6 @@ public class ProductManager {
         return false;
     }
 
-    // 1. Thêm mới 1 sp
     public void add(Product p) {
         listProduct.add(p);
     }
@@ -50,15 +49,12 @@ public class ProductManager {
         listProduct.add(new Product(id, name, des, amount, price));
     }
 
-    // 2. Hien thi sp => Hien thi theo danh muc sp: da co
     public void display() {
-//        System.out.println("------------- DANH SÁCH SẢN PHẨM ----------");
         for(Product p:listProduct) {
             p.display();
         }
     }
 
-    // 3. Tim kiem va hien thi thong tin 1 sp:
     public Product findById() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Nhập id sản phẩm: ");
@@ -98,7 +94,6 @@ public class ProductManager {
         }
     }
 
-    // 6. Hiển thị sp theo khoảng giá
     public void filter() {
         double lowerLimit, upperLimit;
         Scanner sc = new Scanner(System.in);

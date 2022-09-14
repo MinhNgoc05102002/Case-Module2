@@ -5,8 +5,8 @@ import storage.ReadAndWriteFile;
 import model.menu.Menu;
 
 public class HandleAdmin {
-    public AccountManager accountManager = new AccountManager();
-    public CategoryManager categoryManager = new CategoryManager();
+    public AccountManager accountManager = AccountManager.getInstance();
+    public CategoryManager categoryManager = CategoryManager.getInstance();
     private Account thisUser = new Account();
 
     public final int DEFAULT = -1;
@@ -26,13 +26,7 @@ public class HandleAdmin {
     public final int DELETE_CATEGORY = 3;
     public final int UPDATE_CATEGORY = 4;
 
-    public HandleAdmin() {
-        categoryManager.getListAllProduct().setListProduct(ReadAndWriteFile.readFileProduct());
-
-        categoryManager.setListCategory(ReadAndWriteFile.readFileCategory(categoryManager.getListAllProduct()));
-
-        accountManager.setListAccount(ReadAndWriteFile.readFileAccount(ReadAndWriteFile.PATH_ACCOUNT_ADMIN));
-    }
+    public HandleAdmin() {   }
 
     public void startMenu() {
         int choose = DEFAULT;

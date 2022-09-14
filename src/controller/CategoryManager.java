@@ -2,6 +2,7 @@ package controller;
 
 import model.Category;
 import model.Product;
+import storage.ReadAndWriteFile;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -9,10 +10,21 @@ import java.util.Scanner;
 public class CategoryManager {
     private ProductManager listAllProduct;
     private ArrayList<Category> listCategory;
+    private static CategoryManager instance = null;
+    public static CategoryManager getInstance() {
+        if(instance == null) {
+            instance = new CategoryManager();
+        }
+        return instance;
+    }
 
-    public CategoryManager() {
+    private CategoryManager() {
         listCategory = new ArrayList<>();
         listAllProduct = new ProductManager();
+
+        listAllProduct.setListProduct(ReadAndWriteFile.readFileProduct());
+
+        listCategory = ReadAndWriteFile.readFileCategory(listAllProduct);
     }
 
     public void updateCategory() {
@@ -33,7 +45,6 @@ public class CategoryManager {
         return false;
     }
 
-    // Hien thi sp theo danh mục sp
     public void displayProduct() {
         for(int i=0; i<listCategory.size(); i++) {
             System.out.println("\n" + i + ". " + "Id: " + listCategory.get(i).getId() + " | " + listCategory.get(i).getCategoryName());
@@ -42,7 +53,7 @@ public class CategoryManager {
         System.out.println("\n------------ DANH SÁCH TẤT CẢ SẢN PHẨM ------------");
         listAllProduct.display();
     }
-    // 1. Xem danh muc sp
+
     public void display() {
         System.out.println("Danh sách các danh mục sản phẩm: ");
         for(int i=0; i<listCategory.size(); i++) {
@@ -50,7 +61,7 @@ public class CategoryManager {
         }
     }
 
-    // 2. Thêm danh mục sp
+
     public void add() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Nhập id của danh mục sản phẩm: ");
@@ -71,7 +82,7 @@ public class CategoryManager {
         System.out.println("Thêm thành công!!!");
     }
 
-    // 3. Xóa danh mục sp
+
     public void del() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Nhập id của danh mục sản phẩm muốn xóa: ");

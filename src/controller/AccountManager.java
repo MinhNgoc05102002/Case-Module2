@@ -1,15 +1,25 @@
 package controller;
 
 import model.account.Account;
+import storage.ReadAndWriteFile;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AccountManager {
     private ArrayList<Account> listAccount;
+    private static AccountManager instance = null;
 
-    public AccountManager(){
+    public static AccountManager getInstance() {
+        if(instance == null) {
+            instance = new AccountManager();
+        }
+        return instance;
+    }
+
+    private AccountManager(){
         listAccount = new ArrayList<Account>();
+        listAccount = ReadAndWriteFile.readFileAccount(ReadAndWriteFile.PATH_ACCOUNT_ADMIN);
     }
 
     public boolean containsAccount(String username) {

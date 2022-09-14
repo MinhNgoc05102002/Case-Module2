@@ -25,30 +25,24 @@ public class Category {
         productList = new ProductManager();
     }
 
-    // 1. Them sp vao Category
     public void add(Product p) {
         if(!productList.containsProduct(p.getId()))
             productList.add(p);
     }
 
-    // 2. Hien thi sp theo category
     public void display() {
         productList.display();
     }
 
-    // 3. Xoa sp khoi category (van con trong he thong)
     public void delProduct(String id) {
         if(!productList.containsProduct(id)) {
-            System.out.println("Danh mục sản phẩm không chứa sản phẩm này");
             return;
         }
-
         for(int i=0; i<productList.getListProduct().size(); i++) {
             if(productList.getListProduct().get(i).getId().equals(id)) {
                 productList.getListProduct().remove(i);
             }
         }
-        System.out.println("Success delete!!!");
     }
 
     @Override

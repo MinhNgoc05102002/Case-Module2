@@ -9,8 +9,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class HandleUser {
-    public AccountManager accountManager = new AccountManager();
-    public CategoryManager categoryManager = new CategoryManager();
+    public AccountManager accountManager = AccountManager.getInstance();
+    public CategoryManager categoryManager = CategoryManager.getInstance();
     private Account thisUser = new Account();
     public final int DEFAULT = -1;
     public final int EXIT = 0;
@@ -23,11 +23,7 @@ public class HandleUser {
     public final int DISPLAY_CART = 5;
 
     public HandleUser() {
-        categoryManager.getListAllProduct().setListProduct(ReadAndWriteFile.readFileProduct());
 
-        categoryManager.setListCategory(ReadAndWriteFile.readFileCategory(categoryManager.getListAllProduct()));
-
-        accountManager.setListAccount(ReadAndWriteFile.readFileAccount(ReadAndWriteFile.PATH_ACCOUNT_USER));
     }
 
     public void startMenu() {

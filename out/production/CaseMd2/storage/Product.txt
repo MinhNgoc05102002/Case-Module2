@@ -5,7 +5,6 @@
 05,Cây trúc Nhật,Mang ý nghĩa phong thủy và may mắn,29,349.0,01,02,04
 06,Cây hạnh phúc thủy sinh,Chiều cao cả bình khoảng 30cm,47,155.0,03,02
 07,Cây kim tiền thủy sinh,Phù hợp với người mệnh thủy-kim-mộc,50,155.0,03,01
-08,Cây sen đá hạt lựu,Kích thước 5-7cm,30,50.0,05,03
 09,Cây sen đá kim cương,Kích thước 5-7cm,30,50.0,05,03
 10,Sen đá pha lê,Kích thước 5-7cm,30,50.0,05,03
 12,Sen đá cỏ tím,Kích thước 5-7cm,30,50.0,05,03
